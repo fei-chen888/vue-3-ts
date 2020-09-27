@@ -1,3 +1,4 @@
+import { AntdInputEvent } from '@/@types/global'
 import { Options, Vue } from 'vue-class-component'
 import './HelloWorld.less'
 
@@ -22,7 +23,7 @@ import './HelloWorld.less'
         <div class="hello">
           {this.getMsg()}
         </div>
-        <a-input v-model={this.input} style="width: 200px" />
+        <a-input onChange={(e: AntdInputEvent) => this.onInputChange(e)} style="width: 200px" />
         <a-button type="primary" onClick={() => this.callback()}>确定</a-button>
       </>
     )
@@ -41,5 +42,9 @@ export default class HelloWorld extends Vue {
 
   callback () {
     this.$emit('update', this.input)
+  }
+
+  onInputChange (e: AntdInputEvent) {
+    this.input = e.target.value
   }
 }

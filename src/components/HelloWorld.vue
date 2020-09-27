@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ getMsg() }}</h1>
-    <a-input v-model="input" type="input" style="width: 200px" />
+    <a-input v-model:value="input" type="input" style="width: 200px" />
     <a-button type="primary"  @click="callback">确定</a-button>
   </div>
 </template>

@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { AntdInputEvent } from '@/@types/global'
 import './HelloWorld.less'
 const HelloWorld = {
   props: {
@@ -20,6 +21,9 @@ const HelloWorld = {
     },
     callback () {
       this.$emit('update', this.input)
+    },
+    onInputChange (e: AntdInputEvent) {
+      this.input = e.target.value
     }
   },
   render () {
@@ -28,7 +32,7 @@ const HelloWorld = {
         <div class="hello">
           {this.msg}
         </div>
-        <a-input v-model={this.input} style="width: 200px" />
+        <a-input onChange={(e: AntdInputEvent) => this.onInputChange(e)} style="width: 200px" />
         <a-button onClick={() => this.callback()}>确定</a-button>
       </>
     )
