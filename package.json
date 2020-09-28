@@ -49,7 +49,10 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/member-delimiter-style": 0
+    }
   },
   "browserslist": [
     "> 1%",

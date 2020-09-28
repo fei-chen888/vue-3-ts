@@ -9,6 +9,9 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 
+/**
+ * 组件状态
+ */
 interface State {
   input: string;
   a: string;
@@ -25,6 +28,11 @@ interface State {
    */
   props: {
     msg: String
+  },
+  watch: {
+    'state.input' (v) {
+      this.consoleA(v)
+    }
   }
 })
 export default class HelloWorld extends Vue {
@@ -40,6 +48,10 @@ export default class HelloWorld extends Vue {
 
   getMsg (): string {
     return this.msg
+  }
+
+  consoleA (v: string) {
+    console.log(v, this.state.input)
   }
 
   callback () {

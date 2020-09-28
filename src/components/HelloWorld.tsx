@@ -2,8 +2,12 @@ import { AntdInputEvent, AntdInputProps } from '@golobal'
 import { Options, Vue } from 'vue-class-component'
 import './HelloWorld.less'
 interface State {
-  input: string;
+  input: string
 }
+
+/**
+ * HelloWorld组件
+ */
 @Options({
   /**
    * 组件属性
@@ -39,6 +43,9 @@ export default class HelloWorld extends Vue {
     msg: ''
   }
 
+  /**
+   * 获取信息
+   */
   getMsg (): string {
     return this.msg
   }
