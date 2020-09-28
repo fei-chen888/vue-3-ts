@@ -43,6 +43,7 @@ export default class HelloWorld extends Vue {
   }
 
   callback () {
+    this.$message.success('update')
     this.$emit('update', this.state.input)
   }
 }

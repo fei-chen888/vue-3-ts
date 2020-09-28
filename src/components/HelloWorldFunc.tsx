@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { AntdInputEvent } from '@/@types/global'
+import { AntdInputEvent } from '@global'
 import './HelloWorld.less'
 const HelloWorld = {
   props: {

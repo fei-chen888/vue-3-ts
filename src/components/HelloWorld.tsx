@@ -1,4 +1,4 @@
-import { AntdInputEvent, AntdInputProps } from '@/@types/global'
+import { AntdInputEvent, AntdInputProps } from '@golobal'
 import { Options, Vue } from 'vue-class-component'
 import './HelloWorld.less'
 interface State {
