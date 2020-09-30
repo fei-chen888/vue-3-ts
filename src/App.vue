@@ -5,7 +5,11 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld, { Message } from './components/HelloWorld.vue'
+
+interface State {
+  msg: string
+}
 
 @Options({
   components: {
@@ -13,12 +17,17 @@ import HelloWorld from './components/HelloWorld.vue'
   }
 })
 export default class App extends Vue {
-  get msg () {
-    return 'Welcome to Your Vue.js + TypeScript App'
+  state: State = {
+    msg: 'Welcome to Your Vue.js + TypeScript App'
   }
 
-  update (d: string) {
-    console.log('update:', d)
+  get msg () {
+    return this.state.msg
+  }
+
+  update (list: Message[]) {
+    this.state.msg = `Welcome to Your Vue.js + TypeScript App(${list.length})`
+    console.log('update:', list)
   }
 }
 </script>
